@@ -1,9 +1,9 @@
-import { createWebHistory, createRouter, Router } from 'vue-router'
+import { createWebHistory, createRouter, Router, RouteRecordRaw } from 'vue-router'
 
 import Home from '@/pages/Home.vue'
 import Catalog from '@/pages/Catalog.vue'
 
-const routes = [
+const routes: Readonly<RouteRecordRaw[]> = [
   {
     path: '/',
     name: 'home',
