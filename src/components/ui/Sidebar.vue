@@ -13,6 +13,7 @@ import ActionIcon from '@/assets/icons/action.svg'
 import DeliveryIcon from '@/assets/icons/delivery.svg'
 
 import HamburgerIcon from '@/assets/icons/hamburger-button.svg'
+import { useSidebarStore } from '@stores/sidebar.ts'
 
 
 const isOpen = ref(false)
@@ -131,6 +132,9 @@ const items: SidebarProps[] = [
 const toggleSidebar = () => {
   isOpen.value = !isOpen.value
 }
+
+const sidebar = useSidebarStore();
+
 </script>
 
 <template>
@@ -211,7 +215,6 @@ const toggleSidebar = () => {
   font-size: 20px;
 }
 button {
-  margin: 10px;
   cursor: pointer;
 }
 
@@ -239,7 +242,7 @@ button {
 
 .close-btn {
   display: block;
-  margin-bottom: 20px;
+  margin: 20px 0 20px 10px;
   cursor: pointer;
 }
 

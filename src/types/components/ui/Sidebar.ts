@@ -5,7 +5,7 @@ export type Icon = {
 
 export type SidebarProps = {
   id: number
-  title: string
+  title?: string
   route?: string | any
   icon?: Icon
 };

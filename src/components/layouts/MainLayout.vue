@@ -13,8 +13,9 @@ import MainFooter from '@/components/widgets/footers/MainFooter.vue'
 
 <style scoped>
 .container {
+  flex-grow: 1;
   margin: 0 auto;
-  width: 1320px;
+  max-width: 1320px;
   padding: 0 15px;
 }
 </style>

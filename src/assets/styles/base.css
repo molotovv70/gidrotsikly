@@ -14,7 +14,13 @@ body {
     height: 100vh;
 }
 
-ul, ol {
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+ul, ol, li {
     list-style: none;
 }
 
