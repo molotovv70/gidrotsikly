@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     outline: none;
-    font-family: 'SF Pro Display', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--main-page-font);
     font-weight: 400;
     font-size: 15px;
     color: var(--primary-text-color);

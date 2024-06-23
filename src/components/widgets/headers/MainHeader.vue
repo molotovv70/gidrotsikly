@@ -15,16 +15,22 @@ console.log(HomeImg)
 
 <template>
   <header>
-    <Sidebar />
-    Header
-    <div class='sd'>
+    <div class='header__top'>
+      <Sidebar />
+      <span class='header__logo'>DRIVE MOTO</span>
+    </div>
+    <div class='header__bottom'>
     </div>
   </header>
 </template>
 
 <style scoped>
-.sd {
-  width: 20px;
-  height: 20px;
+.header__top {
+  display: flex;
+}
+.header__logo {
+  font-family: Staatiliches, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }
 </style>
