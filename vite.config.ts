@@ -10,7 +10,7 @@ export default defineConfig({
       '@fonts': '/src/assets/fonts',
       '@images': '/src/assets/images',
       '@stores': '/src/stores',
-      '@hooks': '/src/hooks'
+      '@hooks': '/src/hooks',
     }
   }
 })

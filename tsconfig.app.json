@@ -28,7 +28,7 @@
       "@fonts/*": ["./src/assets/fonts/*"],
       "@images/*": ["./src/assets/images/*"],
       "@stores/*": ["./src/stores/*"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@hooks/*": ["./src/hooks/*"],
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
