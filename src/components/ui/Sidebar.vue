@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { Icon } from '@/types/components/ui/Sidebar.ts'
+import { IconProps } from '@/types/components/ui/Icon.ts'
 import { SidebarProps } from '@/types/components/ui/Sidebar.ts'
 
 /* icons */
@@ -13,10 +13,11 @@ import ActionIcon from '@/assets/icons/action.svg'
 import DeliveryIcon from '@/assets/icons/delivery.svg'
 
 import HamburgerIcon from '@/assets/icons/hamburger-button.svg'
+import Icon from '@/components/ui/Icon.vue'
 
 const isOpen = ref(false)
 
-const hamburgerIcon: Icon = {
+const hamburgerIcon: IconProps = {
   path: HamburgerIcon,
   alt: 'hamburger'
 }
@@ -147,7 +148,7 @@ const toggleSidebar = () => {
           <RouterLink v-for="item in items" :to="item.route" class='sidebar__link'>
             <li :key="item.id" class='sidebar__item'>
                 <div class='sidebar__icon-container'>
-                  <img v-if='item.icon' :src="item.icon.path" :alt="item.icon.alt" class="sidebar__icon" />
+                  <Icon v-if='item.icon' :item='item.icon' class="sidebar__icon" />
                 </div>
                 <span class='sidebar__title'>{{ item.title }}</span>
             </li>
@@ -193,9 +194,6 @@ const toggleSidebar = () => {
 .sidebar__icon-container {
   width: 50px;
   padding-right: 25px;
-}
-.sidebar__icon {
-  width: 100%;
 }
 .sidebar__title {
   font-size: 20px;

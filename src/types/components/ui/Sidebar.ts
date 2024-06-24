@@ -1,11 +1,8 @@
-export type Icon = {
-  path: string
-  alt?: string
-}
+import { IconProps } from '@/types/components/ui/Icon.ts'
 
 export type SidebarProps = {
   id: number
   title?: string
   route?: string | any
-  icon?: Icon
+  icon?: IconProps
 };
