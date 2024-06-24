@@ -4,6 +4,14 @@ import Input from '@/components/ui/Input.vue'
 import { ButtonProps } from '@/types/components/ui/Button.ts'
 import { AccordionProps } from '@/types/components/ui/Accordion.ts'
 import Accordion from '@/components/ui/Accordion.vue'
+import { IconProps } from '@/types/components/ui/Icon.ts'
+
+/* icons */
+import FacebookIcon from '@/assets/icons/socials/facebook.svg'
+import InstagramIcon from '@/assets/icons/socials/instagram.svg'
+import VkIcon from '@/assets/icons/socials/vk.svg'
+import YoutubeIcon from '@/assets/icons/socials/youtube.svg'
+import Icon from '@/components/ui/Icon.vue'
 
 const buttonProps: ButtonProps = {
   value: 'Отправить',
@@ -24,6 +32,37 @@ const accordionProps: AccordionProps[] = [
   },
 ]
 
+const socialItems: {icon: IconProps, url: string}[] = [
+  {
+    icon: {
+      path: FacebookIcon,
+      alt: 'facebook logo'
+    },
+    url: '#',
+  },
+  {
+    icon: {
+      path: InstagramIcon,
+      alt: 'instagram logo'
+    },
+    url: '#',
+  },
+  {
+    icon: {
+      path: VkIcon,
+      alt: 'vk logo'
+    },
+    url: '#',
+  },
+  {
+    icon: {
+      path: YoutubeIcon,
+      alt: 'youtube logo'
+    },
+    url: '#',
+  },
+]
+
 </script>
 
 <template>
@@ -33,15 +72,16 @@ const accordionProps: AccordionProps[] = [
         <p class='footer__email-content'>Подпишитесь на нашу рассылку <br> и узнавайте о акция быстрее</p>
         <Input type='text' placeholder='Введите ваш e-mail:' :button='buttonProps' class='footer__email-input'></Input>
       </div>
-      </div>
     <Accordion :items='accordionProps' />
-<!--      <div class='footer__accordion'>-->
-<!--        <div class='footer__accordion-item'>-->
-<!--          <p class='footer__accordion-content'></p>-->
-<!--        </div>-->
-<!--      </div>-->
+    </div>
     <div class='footer__bottom'>
-
+      <div class='footer__socials'>
+        <div v-for='item in socialItems' class='footer__social-item'>
+          <a :href='item.url'>
+            <Icon :item='item.icon' />
+          </a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -62,5 +102,17 @@ const accordionProps: AccordionProps[] = [
 }
 .footer__email-input {
   padding: 0 10px;
+}
+.footer__bottom {
+  padding: 40px 0 80px 0;
+}
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.footer__social-item {
+  width: 30px;
+  height: 30px;
 }
 </style>
