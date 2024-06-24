@@ -25,14 +25,13 @@ const buttonClass = computed(() => {
 
 <style scoped>
 .btn {
-  padding: 10px 20px;
   border: none;
   cursor: pointer;
   font-size: 16px;
   background-color: transparent;
 }
 .btn-primary {
-  background-color: blue;
+  background-color: var(--pallete-accent-color);
   color: white;
 }
 .btn-secondary {

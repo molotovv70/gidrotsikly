@@ -1,4 +1,4 @@
-<script setup lang='ts' xmlns='http://www.w3.org/1999/html'>
+<script setup lang='ts'>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Icon } from '@/types/components/ui/Sidebar.ts'
@@ -13,8 +13,6 @@ import ActionIcon from '@/assets/icons/action.svg'
 import DeliveryIcon from '@/assets/icons/delivery.svg'
 
 import HamburgerIcon from '@/assets/icons/hamburger-button.svg'
-import { useSidebarStore } from '@stores/sidebar.ts'
-
 
 const isOpen = ref(false)
 
@@ -133,8 +131,6 @@ const toggleSidebar = () => {
   isOpen.value = !isOpen.value
 }
 
-const sidebar = useSidebarStore();
-
 </script>
 
 <template>
@@ -147,9 +143,6 @@ const sidebar = useSidebarStore();
     </button>
     <div v-if="isOpen" class="sidebar__overlay" @click="toggleSidebar"></div>
     <div v-if="isOpen" class="sidebar__content">
-      <button class="close-btn sidebar__btn" @click="toggleSidebar">
-        <img :src='hamburgerIcon.path' alt='hamburgerIcon.alt'>
-      </button>
       <ul class='sidebar__list'>
           <RouterLink v-for="item in items" :to="item.route" class='sidebar__link'>
             <li :key="item.id" class='sidebar__item'>
@@ -182,6 +175,7 @@ const sidebar = useSidebarStore();
   width: 100%;
 }
 .sidebar__list {
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
 }
