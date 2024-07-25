@@ -42,7 +42,7 @@ const toggle = (index: number) => {
 .accordion__header {
   display: flex;
   justify-content: space-between;
-  background-color: #f1f1f1;
+  background-color: var(--palette-light-footer-color);
   padding: 15px;
   cursor: pointer;
   user-select: none;
@@ -58,6 +58,8 @@ const toggle = (index: number) => {
   width: 12px;
 }
 .accordion__content {
+  background-color: var(--palette-light-primary-color);
+
   padding: 15px;
   border-top: 1px solid #ccc;
 }
