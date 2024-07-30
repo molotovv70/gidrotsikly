@@ -1,12 +1,43 @@
 <script setup lang='ts'>
 import SearchIcon from '@/assets/icons/search.svg'
+
+import { ref, watch } from 'vue';
+
+const props = defineProps<{
+  activeTab: number | string;
+}>();
+
+const query = ref('');
+const placeholder = ref('Введите номер');
+
+watch(() => props.activeTab, (newTab) => {
+  switch (newTab) {
+    case 1:
+      placeholder.value = 'Введите номер';
+      break;
+    case 2:
+      placeholder.value = 'Введите марку';
+      break;
+    case 3:
+      placeholder.value = 'Введите название товара';
+      break;
+    default:
+      placeholder.value = 'Введите номер';
+      break;
+  }
+});
+
+const search = () => {
+  // Логика запроса для фильтрации
+  console.log(`Поиск по: ${query.value}`);
+};
 </script>
 
 <template>
   <div class='search'>
-    <input type='text' placeholder='Введите марку' class='search__input'>
+    <input v-model='query' type='text' :placeholder='placeholder ?? "Введите значение"' class='search__input'>
     <div class='search__icon-after'>
-      <img :src='SearchIcon' alt='search icon'>
+      <img @click="search" :src='SearchIcon' alt='search icon'>
     </div>
   </div>
 </template>
