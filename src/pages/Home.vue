@@ -2,15 +2,17 @@
 import MainLayout from '@/components/layouts/MainLayout.vue';
 import PromoteProduct from '@/components/widgets/product/PromoteProduct.vue';
 import ProductSearch from '@/components/ui/ProductSearch.vue';
-import ProductCatalogCard from '@/components/ui/ProductCatalogCard.vue'
+import ProductCatalogCard from '@/components/ui/ProductCatalogCard.vue';
 
-/* productCatalogCardsImgs */
+/* ProductCatalogCardsImgs */
 import Kvadrotsikly from '@/assets/icons/catalog/kvadrotsikly.png'
 import Gidrotsikly from '@/assets/icons/catalog/gidrotsikly.png'
 import Katera from '@/assets/icons/catalog/katera.png'
 import Snegohodi from '@/assets/icons/catalog/snegohodi.png'
 import Vezdehodi from '@/assets/icons/catalog/vezdehodi.png'
 import Dvigateli from '@/assets/icons/catalog/dvigateli.png'
+import ListRecomendationsProduct from '@/components/widgets/product/ListRecomendationsProduct.vue'
+import { TabsProps } from '@/types/components/ui/Tabs.ts'
 
 const productCatalogCards = [
   {
@@ -56,6 +58,29 @@ const productCatalogCards = [
     }
   },
 ];
+
+const ListRecomendationsProductsProps = [
+  {
+  }
+]
+
+const tabsItemsPopularProducts: TabsProps = {
+  tabs: [
+    { id: 0, title: 'Запчасти' },
+    { id: 1, title: 'Моторы' },
+    { id: 2, title: 'Шины' },
+    { id: 3, title: 'Электроника' },
+  ]
+};
+
+const tabsItemsRecommendationProducts: TabsProps = {
+  tabs: [
+    { id: 0, title: 'Запчасти' },
+    { id: 1, title: 'Моторы' },
+    { id: 2, title: 'Шины' },
+    { id: 3, title: 'Электроника' },
+  ]
+};
 </script>
 
 <template>
@@ -65,6 +90,8 @@ const productCatalogCards = [
     <div class='product-catalog-cards__section'>
       <ProductCatalogCard v-for="card in productCatalogCards" :key="card.id" :item="card" />
     </div>
+    <ListRecomendationsProduct title='Популярные товары' :tabs-items='tabsItemsPopularProducts' />
+    <ListRecomendationsProduct title='С этим товаром часто покупают' :tabs-items='tabsItemsRecommendationProducts' />
   </MainLayout>
 </template>
 
