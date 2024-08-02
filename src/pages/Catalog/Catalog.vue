@@ -2,6 +2,7 @@
 import MainLayout from '@/components/layouts/MainLayout.vue'
 import Breadcrumbs from '@/components/ui/Breadcrumbs.vue'
 import CatalogFilter from '@/components/widgets/CatalogFilter.vue'
+
 </script>
 
 <template>
