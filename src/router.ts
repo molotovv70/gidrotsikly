@@ -32,7 +32,7 @@ const routes = [
   },
   {
     path: '/catalog',
-    name: 'catalog',
+    name: 'Главная',
     component: Catalog,
     children: [
       {
@@ -42,7 +42,7 @@ const routes = [
       },
       {
         path: 'boats',
-        name: 'boats',
+        name: 'Лодки',
         component: Boats,
       },
       {

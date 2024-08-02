@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
-
+import MainLayout from '@/components/layouts/MainLayout.vue'
+import Breadcrumbs from '@/components/ui/Breadcrumbs.vue'
 </script>
 
 <template>
-  <div class='container'>
-    <h1>Catalog</h1>
-    <RouterLink to="/">Go to Home</RouterLink>
-  </div>
+  <MainLayout :is-show-header-bottom='false'>
+    <Breadcrumbs />
+    <router-view />
+  </MainLayout>
 </template>
 
 <style scoped>
-
 </style>

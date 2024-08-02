@@ -3,6 +3,13 @@ import Sidebar from '@/components/ui/Sidebar.vue'
 // import HomeImg from '@/assets/icons/home.svg'
 import { SidebarProps } from '@/types/components/ui/Sidebar.ts'
 
+defineProps({
+  isShowHeaderBottom: {
+    type: Boolean,
+    default: true
+  }
+})
+
 /* icons */
 import FavoriteIcon from '@/assets/icons/favorite.svg'
 import ProfileIcon from '@/assets/icons/profile.svg'
@@ -77,7 +84,7 @@ const itemsBottom: SidebarProps[] = [
         </RouterLink>
       </div>
     </div>
-    <div class='header__bottom'>
+    <div class='header__bottom' v-if='isShowHeaderBottom'>
       <div class='header__links'>
         <RouterLink v-for="item in itemsBottom" :to="item.route" class='header__link'>
           <li :key="item.id" class='header__item'>

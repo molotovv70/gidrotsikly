@@ -89,7 +89,6 @@ const socialItems: {icon: IconProps, url: string}[] = [
 <style scoped>
 .footer {
   background-color: var(--palette-light-footer-color);
-  min-height: 500px;
 }
 .footer__email {
   padding: 17px 0 40px 0;
@@ -104,7 +103,7 @@ const socialItems: {icon: IconProps, url: string}[] = [
   padding: 0 10px;
 }
 .footer__bottom {
-  padding: 40px 0 80px 0;
+  padding: 20px 0 40px 0;
 }
 .footer__socials {
   display: flex;
